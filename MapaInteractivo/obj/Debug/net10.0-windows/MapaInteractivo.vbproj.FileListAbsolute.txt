@@ -1,0 +1,46 @@
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\MapaInteractivo.exe
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\MapaInteractivo.deps.json
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\MapaInteractivo.runtimeconfig.json
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\MapaInteractivo.dll
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\MapaInteractivo.pdb
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.vbproj.GenerateResource.cache
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.AssemblyInfoInputs.cache
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.AssemblyInfo.vb
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.vbproj.CoreCompileInputs.cache
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.dll
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\refint\MapaInteractivo.dll
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.pdb
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.genruntimeconfig.cache
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\ref\MapaInteractivo.dll
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.frmPrincipal.resources
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\mapa_blanco.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\chorotega.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\creole.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\matagalpa.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\mayangna.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\miskito.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\nahoas.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\rama.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\rama_creole.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\ulwas.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\Mascaras\xiu.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 1,1.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 1.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 2.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 3,3.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 3.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 4.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 5.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 5i5.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique 6.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique2i2.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\cacique6i6.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\caique 4,4.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\bin\Debug\net10.0-windows\Recursos\texturas\textura piedra.png
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.frmCacique01.resources
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.Resources.resources
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.frmRegionChorotega.resources
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.frmCacique02.resources
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.frmCacique08.resources
+C:\Users\aguil\Documents\proyecto interculturalidad\MapaInteractivo\MapaInteractivo\obj\Debug\net10.0-windows\MapaInteractivo.frmFuentes.resources

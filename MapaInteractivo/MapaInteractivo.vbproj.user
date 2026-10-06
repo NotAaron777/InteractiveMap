@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="2_Principal\frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionChorotega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionCreole.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionMatagalpa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionMayangna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionMiskito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionNahoas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionRama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionUlwas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="3_Regiones\frmRegionXiu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique02.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique03.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique04.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique05.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique06.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique07.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="4_Caciques\frmCacique08.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="5_Fuentes\frmFuentes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
