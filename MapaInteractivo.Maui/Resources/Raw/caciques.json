@@ -11,7 +11,7 @@
     "hechos": "En 1523 se reunió con Gil González Dávila. Los relatos posteriores le atribuyen preguntas religiosas y políticas dirigidas a los españoles. Esas conversaciones se conocen a través de autores españoles, no por un testimonio escrito por él.",
     "legado": "Es una figura históricamente documentada. Su recuerdo conserva el nombre con que se conoce a Nicaragua y al pueblo Nicarao.",
     "fuentes": "• A. Chapman, Los Nicarao y los Chorotega según las fuentes históricas\n• M. Tous i Mata, De la Gran Nicoya precolombina a la provincia de Nicaragua, s. XV y XVI\n• L. A. Newson, Supervivencia indígena en la Nicaragua colonial",
-    "imagen": "cacique1.png",
+    "imagen": "cacique_nicarao.png",
     "color": "#4FD2E9",
     "region": "nahoas"
   },
@@ -27,7 +27,7 @@
     "hechos": "El cronista Pedro Mártir de Anglería cuenta que llegó acompañado de muchos hombres y pidió un plazo antes de responder a las demandas de los españoles. Poco después, los indígenas atacaron a los españoles.",
     "legado": "Es uno de los símbolos más conocidos de la resistencia indígena en la memoria nacional de Nicaragua.",
     "fuentes": "• M. Tous i Mata, De la Gran Nicoya precolombina a la provincia de Nicaragua, s. XV y XVI",
-    "imagen": "cacique2.png",
+    "imagen": "diriangen.png",
     "color": "#B541FA",
     "region": "chorotega"
   },
@@ -59,7 +59,7 @@
     "hechos": "Acompañó a Oviedo en su visita al volcán Masaya y le transmitió información sobre las prácticas rituales y las consultas que se realizaban en el cráter.",
     "legado": "Su testimonio es una ventana a la vida ritual indígena alrededor del volcán Masaya.",
     "fuentes": "• G. Fernández de Oviedo y Valdés, Nicaragua en los cronistas de Indias: Oviedo",
-    "imagen": "cacique4.png",
+    "imagen": "tenderi.png",
     "color": "#B541FA",
     "region": "chorotega"
   },
@@ -75,7 +75,7 @@
     "hechos": "Fue registrado como cacique de Nicoya en la expedición de González Dávila, y Oviedo lo conoció como Nambí o don Alonso durante su visita de 1529.",
     "legado": "Nicoya representa la memoria del señorío chorotega más meridional de la Gran Nicoya.",
     "fuentes": "• M. Tous i Mata, De la Gran Nicoya precolombina a la provincia de Nicaragua, s. XV y XVI\n• G. Fernández de Oviedo y Valdés, Nicaragua en los cronistas de Indias: Oviedo",
-    "imagen": "cacique5.png",
+    "imagen": "nicoya.png",
     "color": "#4FD2E9",
     "region": "chorotega"
   },
@@ -91,7 +91,7 @@
     "hechos": "Según los relatos, junto a Yasica funda los primeros asentamientos en el entorno del cerro Apante.",
     "legado": "Es una parte valiosa del patrimonio oral matagalpa y un símbolo de los orígenes de la ciudad.",
     "fuentes": "• E. Kühl Aráuz, Indios matagalpas: Lengua, cuentos y leyendas\n• Fundación Vínculos Estelí, Yasica y Yaguare: Los orígenes de la ciudad de Matagalpa",
-    "imagen": "cacique6.png",
+    "imagen": "yaguare.png",
     "color": "#263995",
     "region": "matagalpa"
   },
@@ -107,7 +107,7 @@
     "hechos": "El relato lo presenta como protagonista de una gesta de resistencia en la sierra de Amerrique, difundida por distintos autores.",
     "legado": "Su valor está en la memoria y la identidad regional de Chontales. Conviene distinguir la existencia histórica de poblaciones chontales de la de un cacique con ese nombre.",
     "fuentes": "• M. Vargas A., La leyenda del cacique Chontal (Revista de Temas Nicaragüenses)",
-    "imagen": "",
+    "imagen": "chontal.png",
     "color": "#74706D",
     "region": ""
   },
@@ -123,7 +123,7 @@
     "hechos": "En 1541 la documentación registra a una mujer llamada Soche y a un cacique llamado Çital en hechos cercanos a Sutiaba. La tradición oral y la literatura transformaron ese acontecimiento colonial en el relato de Adiac y Soche.",
     "legado": "Adiac es un personaje mítico de gran importancia identitaria, con un posible origen en hechos históricos. No debe confundirse con el cacique Çital, que sí aparece en los documentos.",
     "fuentes": "• M. Rizo, Valor jurídico y político del mito y su hermenéutica histórica: El Cacique Adiac y la india Soche quemada viva por un español en 1541",
-    "imagen": "",
+    "imagen": "adiac.png",
     "color": "#B541FA",
     "region": "xiu"
   }

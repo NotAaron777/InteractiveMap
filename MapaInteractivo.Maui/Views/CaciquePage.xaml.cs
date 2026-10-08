@@ -33,10 +33,31 @@ public partial class CaciquePage : ContentPage, IQueryAttributable
         if (Color.TryParse(cacique.Color ?? "#B541FA", out var color))
             encabezadoColor.BackgroundColor = color;
 
+        AplicarAvatar(cacique);
+
         BindingContext = new CaciquePageModel
         {
             Cacique = cacique,
             Secciones = _datos.Secciones(cacique),
         };
+    }
+
+    // Muestra la imagen del cacique si tiene un archivo válido; si no, deja las iniciales.
+    private void AplicarAvatar(Cacique cacique)
+    {
+        var imagen = cacique.Imagen?.Trim();
+
+        if (string.IsNullOrEmpty(imagen))
+        {
+            // Fallback: caciques sin imagen (p. ej. Chontal y Adiac tienen "imagen": "")
+            imgCacique.Source = null;
+            imgCacique.IsVisible = false;
+            lblIniciales.IsVisible = true;
+            return;
+        }
+
+        imgCacique.Source = ImageSource.FromFile(imagen);
+        imgCacique.IsVisible = true;
+        lblIniciales.IsVisible = false;
     }
 }

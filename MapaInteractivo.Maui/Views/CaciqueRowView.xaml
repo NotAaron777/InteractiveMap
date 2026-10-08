@@ -39,11 +39,21 @@
                 <Border.Shadow>
                     <Shadow Brush="Black" Opacity="0.12" Radius="6" Offset="0,2" />
                 </Border.Shadow>
-                <Label
-                    Text="{Binding Iniciales}"
-                    FontFamily="DisplayFont" FontSize="20"
-                    TextColor="{StaticResource Navy}"
-                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <!-- Avatar: foto del cacique si existe; si no, iniciales (fallback) -->
+                <Grid>
+                    <Label
+                        x:Name="lblIniciales"
+                        Text="{Binding Iniciales}"
+                        FontFamily="DisplayFont" FontSize="20"
+                        TextColor="{StaticResource Navy}"
+                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    <Image
+                        x:Name="imgCacique"
+                        Aspect="AspectFill"
+                        IsVisible="False"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill" />
+                </Grid>
             </Border>
 
             <!-- Contenido derecho: badge año + título + descripción -->
