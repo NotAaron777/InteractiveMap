@@ -1,0 +1,74 @@
+[
+  {
+    "año": "1492",
+    "orden": 1,
+    "titulo": "Territorios de Nicaragua",
+    "descripcion": "Antes del contacto con los españoles, el territorio de Nicaragua está organizado en señoríos y pueblos con cosmovisiones propias: el istmo de Rivas con los Nicarao, la Gran Nicoya con los Chorotega, señoríos nahua en el occidente y pueblos del centro-norte como los Matagalpa."
+  },
+  {
+    "año": "1522",
+    "orden": 2,
+    "titulo": "Expedición de Gil González Dávila",
+    "descripcion": "La expedición de González Dávila recorre el Pacífico nicaragüense. En 1522 registra al cacique de Nicoya, uno de los principales señoríos chorotegas del sur de la Gran Nicoya."
+  },
+  {
+    "año": "1523",
+    "orden": 3,
+    "titulo": "Encuentro clave",
+    "descripcion": "El gran señor Nicarao se reúne con Gil González Dávila en el istmo de Rivas. Las conversaciones entre ambos se conocen a través de autores españoles."
+  },
+  {
+    "año": "1523",
+    "orden": 4,
+    "titulo": "Resistencia de Diriangén",
+    "descripcion": "El cronista Pedro Mártir de Anglería relata que el jefe chorotega Diriangén se presentó ante los españoles con un numeroso séquito y pidió un plazo; poco después, los indígenas atacaron a los españoles."
+  },
+  {
+    "año": "1529",
+    "orden": 5,
+    "titulo": "Visita de Oviedo",
+    "descripcion": "Gonzalo Fernández de Oviedo visita Nicaragua. Conoce en Tezoatega al gobernante anciano Agateyte, al cacique de Lenderí (Tenderí) en Nindirí, y registra al gobernante de Nicoya como Nambí, bautizado don Alonso. Acompañado por Tenderí, visita el volcán Masaya."
+  },
+  {
+    "año": "1541",
+    "orden": 6,
+    "titulo": "Soche y Çital en Sutiaba",
+    "descripcion": "La documentación registra a una mujer llamada Soche y a un cacique llamado Çital en hechos cercanos a Sutiaba. La tradición oral y la literatura transformarán ese acontecimiento colonial en el relato de Adiac y Soche."
+  },
+  {
+    "año": "S. XVII–XVIII",
+    "orden": 7,
+    "titulo": "Etnogénesis miskita",
+    "descripcion": "La geografía, los contactos afroindígenas, el trato con británicos y españoles y los mercados regionales del Caribe dan forma a las diferencias internas entre los grupos Sambo y Tawira y a la identidad miskita."
+  },
+  {
+    "año": "S. XIX",
+    "orden": 8,
+    "titulo": "Flecheros matagalpas",
+    "descripcion": "Los flecheros indígenas Matagalpa participan en la Guerra Nacional del siglo XIX, mostrando que la población indígena del centro-norte siguió siendo un actor político después de la conquista."
+  },
+  {
+    "año": "Década de 1980",
+    "orden": 9,
+    "titulo": "Proyecto de Lengua Rama",
+    "descripcion": "El Proyecto de Lengua Rama documenta a los últimos hablantes de la lengua chibcha y crea materiales bilingües y espacios de enseñanza con la participación de la comunidad."
+  },
+  {
+    "año": "2005",
+    "orden": 10,
+    "titulo": "VIII Censo de población",
+    "descripcion": "El VIII Censo de Población y IV de Vivienda de Nicaragua registra las poblaciones de los pueblos y comunidades: Miskitu (120,817), Chorotega-Nahua-Mange (46,002), Xiu-Sutiaba (19,949), Creole (19,890), Matagalpa (15,240), Nahoa-Nicarao (11,113), Mayangna-Sumu (9,756), Rama (4,185) y Ulwa (698)."
+  },
+  {
+    "año": "2016",
+    "orden": 11,
+    "titulo": "Mapa Nacional de Pueblos Indígenas",
+    "descripcion": "El Mapa Nacional de Pueblos Indígenas y Afrodescendientes señala también territorios compartidos: Miskito y Afrodescendientes, Miskito Mayangna, Miskito Mayangna Ulwas y Rama y Creole."
+  },
+  {
+    "año": "2026",
+    "orden": 12,
+    "titulo": "El Mundo Indígena 2026",
+    "descripcion": "IWGIA actualiza las estimaciones de población: Miskitu (unas 150,000), Chorotega (unas 221,000), Creole (unas 43,000) y Sumu o Mayangna (unas 27,000), mostrando que las cifras dependen de la definición, el año y el método."
+  }
+]

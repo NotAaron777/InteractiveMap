@@ -1,0 +1,28 @@
+{
+  "referencias": [
+    "Chapman, A. (1960). Los Nicarao y los Chorotega según las fuentes históricas. Publicaciones de la Universidad de Costa Rica.",
+    "Cruz Barrios, C. L. (2018). Concepción de vida deseable de los pueblos indígenas del Pacífico, Centro y Norte de Nicaragua. Revista Humanismo y Cambio Social, (11), 52–69. http://repositorio.unan.edu.ni/id/eprint/12249",
+    "Cruz Olivas, U. P. (2018). Reflexiones sobre los pueblos originarios del Pacífico, Centro y Norte de Nicaragua. Raíces: Revista de Ciencias Sociales y Políticas, 2(3), 52–61. https://doi.org/10.5377/raices.v2i3.6898",
+    "Del Cid Lucero, V. M. (2017). La cultura Mayangna: Una etnografía por imágenes. Raíces: Revista de Ciencias Sociales y Políticas, 1(1), 99–104. https://doi.org/10.5377/raices.v1i1.3592",
+    "Fernández de Oviedo y Valdés, G. (1976). Nicaragua en los cronistas de Indias: Oviedo (E. Pérez Valle, comp. y notas). Fondo de Promoción Cultural, Banco de América. (Obra original del siglo XVI).",
+    "Fowler, W. R., Jr. (1989). The cultural evolution of ancient Nahua civilizations: The Pipil-Nicarao of Central America. University of Oklahoma Press.",
+    "Fundación Vínculos Estelí. (2018). Yasica y Yaguare: Los orígenes de la ciudad de Matagalpa. Associació Som Vínculos Estelí.",
+    "Gordon, E. T. (2019). Diásporas dispares: Identidad y política en una comunidad afro-nicaragüense (L. Levy, Trad.). URACCAN. (Trabajo original publicado en 1998). https://www.uraccan.edu.ni/sites/default/files/2020-04/DIÁSPORAS DISPARES final 2020 protegida1.pdf",
+    "Green, T., y Hale, K. (1998). Ulwa, the language of Karawala, eastern Nicaragua: Its position and prospects in modern Nicaragua. International Journal of the Sociology of Language, 1998(132), 185–202. https://doi.org/10.1515/ijsl.1998.132.185",
+    "Grinevald, C., y Pivot, B. (2013). On the revitalization of a 'treasure language': The Rama Language Project of Nicaragua. En M. C. Jones y S. Ogilvie (Eds.), Keeping languages alive: Documentation, pedagogy and revitalization (pp. 181–197). Cambridge University Press. https://doi.org/10.1017/CBO9781139245890.018",
+    "Hale, K. (2001). Ulwa (Southern Sumu): The beginnings of a language research project. En P. Newman y M. Ratliff (Eds.), Linguistic fieldwork (pp. 76–101). Cambridge University Press. https://doi.org/10.1017/CBO9780511810206.005",
+    "Instituto Nacional de Estadísticas y Censos. (2006). VIII Censo de población y IV de vivienda, 2005: Resumen censal. Gobierno de Nicaragua. https://www.inide.gob.ni/docu/censos2005/ResumenCensal/RESUMENCENSAL.pdf",
+    "International Work Group for Indigenous Affairs. (2026, 22 de abril). El Mundo Indígena 2026: Nicaragua. https://www.iwgia.org/es/noticias/mi-2026-nicaragua",
+    "Kühl Aráuz, E. (2006). Indios matagalpas: Lengua, cuentos y leyendas. Editorial La Prensa.",
+    "Newson, L. A. (2021). Supervivencia indígena en la Nicaragua colonial (A. Bonilla, Trad.). University of London Press. https://doi.org/10.14296/321.9781908857880 (Trabajo original publicado en 1987).",
+    "Offen, K. H. (2002). The Sambo and Tawira Miskitu: The colonial origins and geography of intra-Miskitu differentiation in eastern Nicaragua and Honduras. Ethnohistory, 49(2), 319–372. https://doi.org/10.1215/00141801-49-2-319",
+    "Rizo, M. (2014). Valor jurídico y político del mito y su hermenéutica histórica: El Cacique Adiac y la india Soche quemada viva por un español en 1541. Cultura de Paz, 20(62).",
+    "Rizo, M. (2017). Flecheros indígenas matagalpa 'héroes nacionales'. Cultura de Paz, 23(72), 25–38. https://doi.org/10.5377/cultura.v23i72.4962",
+    "Rizo Zeledón, M. F. (1999). Identidad y derecho: Los títulos reales del pueblo de Sutiaba. IHNCA-UCA.",
+    "Tous i Mata, M. (2002). De la Gran Nicoya precolombina a la provincia de Nicaragua, s. XV y XVI [Tesis doctoral, Universitat de Barcelona]. Dipòsit Digital de la Universitat de Barcelona. https://hdl.handle.net/2445/35188",
+    "Vargas A., M. (2014). La leyenda del cacique Chontal. Revista de Temas Nicaragüenses, (78), 47–50.",
+    "Williams, M., y Valerio, L. (2016). Mapa Nacional de Pueblos Indígenas y Afrodescendientes. Digital Indigenous Archive, University of Pennsylvania. https://dia.upenn.edu/es/maps/NIC0019/",
+    "Williamson, M., Mendoza, M. J., Valerio, L., García, R., del Cid, V., Mendoza, J., Castro, W., y Salas, R. (2016). Pueblos originarios y afrodescendientes de Nicaragua: Etnografía, ecosistemas naturales y áreas protegidas. UICN, URACCAN y APRODIN."
+  ],
+  "creditos": "MapaInteractivo.Maui — 'Caciques de Nicaragua'\nAplicación educativa de interculturalidad sobre los pueblos originarios y afrodescendientes de Nicaragua. Proyecto original en Windows Forms; versión móvil en .NET MAUI.\nContenido histórico elaborado a partir de fuentes académicas (ver Referencias)."
+}

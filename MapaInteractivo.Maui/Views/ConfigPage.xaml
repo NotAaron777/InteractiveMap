@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MapaInteractivo.Maui.Views.ConfigPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    Title="Config">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Border Style="{StaticResource HeaderStyle}">
+            <VerticalStackLayout Spacing="2" Padding="0,2">
+                <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label Text="&#xE8B8;" FontFamily="MaterialIcons" FontSize="18" TextColor="White" VerticalOptions="Center" />
+                    <Label
+                        Text="ONFIGURACIÓN"
+                        Style="{StaticResource TituloPaginaStyle}"
+                        FontSize="18" />
+                </HorizontalStackLayout>
+                <Label
+                    Text="Preferencias de la aplicación"
+                    Style="{StaticResource SubtituloPaginaStyle}"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Grid Grid.Row="1">
+
+            <!-- Espacio azul noche sobre el panel -->
+            <BoxView Color="{StaticResource NightDeep}" />
+
+            <!-- Panel blanco anclado abajo con esquinas superiores redondeadas -->
+            <Border
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightSurface}, Dark={StaticResource DarkSurface}}"
+                StrokeThickness="0"
+                VerticalOptions="End"
+                HeightRequest="430">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24,24,0,0" />
+                </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.15" Radius="16" Offset="0,-4" />
+                </Border.Shadow>
+                <ScrollView>
+                    <VerticalStackLayout Padding="20,10,20,26" Spacing="0">
+
+                        <!-- Modo oscuro -->
+                        <Grid ColumnDefinitions="*,Auto" Padding="0,14" MinimumHeightRequest="58">
+                            <VerticalStackLayout Grid.Column="0" VerticalOptions="Center" Spacing="1">
+                                <Label Text="Modo oscuro" FontFamily="OpenSansSemibold" FontSize="16" TextColor="{StaticResource Navy}" />
+                                <Label Text="Aplicar tema oscuro a la app" FontSize="12" TextColor="{StaticResource Slate}" />
+                            </VerticalStackLayout>
+                            <Switch
+                                x:Name="swOscuro"
+                                Grid.Column="1"
+                                VerticalOptions="Center"
+                                OnColor="{StaticResource Navy}"
+                                Toggled="OnOscuroCambiado" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0" />
+
+                        <!-- Idioma -->
+                        <Grid ColumnDefinitions="*,Auto" Padding="0,14" MinimumHeightRequest="58">
+                            <VerticalStackLayout Grid.Column="0" VerticalOptions="Center" Spacing="1">
+                                <Label Text="Idioma" FontFamily="OpenSansSemibold" FontSize="16" TextColor="{StaticResource Navy}" />
+                                <Label Text="Selecciona el idioma de la app" FontSize="12" TextColor="{StaticResource Slate}" />
+                            </VerticalStackLayout>
+                            <Border
+                                Grid.Column="1"
+                                BackgroundColor="{StaticResource Navy}"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 14"
+                                Padding="10,2"
+                                VerticalOptions="Center">
+                                <Picker
+                                    Title="ES"
+                                    SelectedIndex="0"
+                                    WidthRequest="88"
+                                    FontFamily="OpenSansSemibold" FontSize="13"
+                                    TextColor="White" TitleColor="White">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type sys:String}">
+                                            <x:String>ES</x:String>
+                                            <x:String>EN</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </Border>
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0" />
+
+                        <!-- Notificaciones -->
+                        <Grid ColumnDefinitions="*,Auto" Padding="0,14" MinimumHeightRequest="58">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnNotificaciones" />
+                            </Grid.GestureRecognizers>
+                            <VerticalStackLayout Grid.Column="0" VerticalOptions="Center" Spacing="1">
+                                <Label Text="Notificaciones" FontFamily="OpenSansSemibold" FontSize="16" TextColor="{StaticResource Navy}" />
+                                <Label Text="Personaliza tus alertas" FontSize="12" TextColor="{StaticResource Slate}" />
+                            </VerticalStackLayout>
+                            <Label
+                                Grid.Column="1"
+                                Text="General · Eventos ›"
+                                FontSize="12"
+                                TextColor="{StaticResource Slate}"
+                                VerticalOptions="Center" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0" />
+
+                        <!-- Privacidad -->
+                        <Grid ColumnDefinitions="*,Auto" Padding="0,14" MinimumHeightRequest="54">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPrivacidad" />
+                            </Grid.GestureRecognizers>
+                            <Label Grid.Column="0" Text="PRIVACIDAD Y DATOS" Style="{StaticResource UppercaseLabelStyle}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="›" FontSize="22" TextColor="{StaticResource Slate}" VerticalOptions="Center" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0" />
+
+                        <!-- Ayuda -->
+                        <Grid ColumnDefinitions="*,Auto" Padding="0,14" MinimumHeightRequest="54">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnAyuda" />
+                            </Grid.GestureRecognizers>
+                            <Label Grid.Column="0" Text="AYUDA Y SOPORTE" Style="{StaticResource UppercaseLabelStyle}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="›" FontSize="22" TextColor="{StaticResource Slate}" VerticalOptions="Center" />
+                        </Grid>
+                        <BoxView HeightRequest="1" Color="{StaticResource Divider}" Margin="0,0" />
+
+                        <!-- Licencias -->
+                        <Grid ColumnDefinitions="*,Auto" Padding="0,14" MinimumHeightRequest="54">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLicencias" />
+                            </Grid.GestureRecognizers>
+                            <Label Grid.Column="0" Text="LICENCIAS Y CRÉDITOS" Style="{StaticResource UppercaseLabelStyle}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="›" FontSize="22" TextColor="{StaticResource Slate}" VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Cerrar sesión -->
+                        <Label
+                            Text="CERRAR SESIÓN"
+                            Margin="0,30,0,4"
+                            FontFamily="OpenSansSemibold" FontAttributes="Bold"
+                            TextColor="{StaticResource ErrorRed}"
+                            CharacterSpacing="2"
+                            HorizontalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCerrarSesion" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

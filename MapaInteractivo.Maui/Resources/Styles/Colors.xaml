@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Paleta Azul Noche (rediseño 2026) -->
+    <Color x:Key="NightDeep">#040D1A</Color>
+    <Color x:Key="NightSoft">#0B192C</Color>
+    <Color x:Key="PanelGray">#F0F3F8</Color>
+
+    <Color x:Key="Navy">#0F172A</Color>
+    <Color x:Key="Slate">#475569</Color>
+    <Color x:Key="Ink">#1E293B</Color>
+    <Color x:Key="Divider">#E2E8F0</Color>
+    <Color x:Key="EventCard">#CBD5E1</Color>
+    <Color x:Key="EventCardSoft">#DCE4EC</Color>
+
+    <Color x:Key="Purple">#7E22CE</Color>
+    <Color x:Key="VioletStrong">#6B21A8</Color>
+
+    <Color x:Key="PinFuchsia">#C026D3</Color>
+    <Color x:Key="PinPurple">#A855F7</Color>
+
+    <Color x:Key="ErrorRed">#DC2626</Color>
+
+    <Color x:Key="Primary">#0F172A</Color>
+    <Color x:Key="PrimaryLight">#0F172A</Color>
+    <Color x:Key="Cyan">#4FD2E9</Color>
+    <Color x:Key="Gray">#74706D</Color>
+    <Color x:Key="Error">#DC2626</Color>
+
+    <!-- Colores del mapa -->
+    <Color x:Key="MapDark">#123D73</Color>
+    <Color x:Key="MapBlue">#176A96</Color>
+
+    <!-- Tema claro (esquema del prompt) -->
+    <Color x:Key="LightBackground">#040D1A</Color>
+    <Color x:Key="LightSurface">#FFFFFF</Color>
+    <Color x:Key="LightText">#0F172A</Color>
+    <Color x:Key="LightTextSecondary">#475569</Color>
+    <Color x:Key="LightDivider">#E2E8F0</Color>
+    <Color x:Key="LightCardGray">#F0F3F8</Color>
+
+    <!-- Tema oscuro (variante noche profunda) -->
+    <Color x:Key="DarkBackground">#0B192C</Color>
+    <Color x:Key="DarkSurface">#0F172A</Color>
+    <Color x:Key="DarkText">#FFFFFF</Color>
+    <Color x:Key="DarkTextSecondary">#94A3B8</Color>
+    <Color x:Key="DarkDivider">#1E293B</Color>
+    <Color x:Key="DarkCardGray">#16233B</Color>
+
+</ResourceDictionary>

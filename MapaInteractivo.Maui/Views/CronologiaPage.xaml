@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MapaInteractivo.Maui.Views.CronologiaPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MapaInteractivo.Maui.Models"
+    Title="Cronología">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Border Style="{StaticResource HeaderStyle}">
+            <VerticalStackLayout Spacing="2" Padding="0,2">
+                <Label
+                    Text="LÍNEA DE TIEMPO: DETALLE"
+                    Style="{StaticResource TituloPaginaStyle}"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center" />
+                <Label
+                    Text="Hitos de los pueblos originarios"
+                    Style="{StaticResource SubtituloPaginaStyle}"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Grid
+            Grid.Row="1"
+            x:Name="contenidoZoom"
+            BackgroundColor="{AppThemeBinding Light={StaticResource Divider}, Dark={StaticResource DarkBackground}}">
+            <Grid.GestureRecognizers>
+                <PinchGestureRecognizer PinchUpdated="OnContenidoZoom" />
+            </Grid.GestureRecognizers>
+
+            <BoxView
+                WidthRequest="3"
+                HorizontalOptions="Center"
+                Margin="0,10,0,10"
+                Color="{StaticResource Purple}" />
+
+            <CollectionView x:Name="listCronologia" Margin="0,10,0,16">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="16" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:TimelineEvent">
+                        <Grid ColumnDefinitions="*,96,*" RowDefinitions="Auto" Margin="0,4,0,4">
+                            <Border Grid.Row="0" Grid.Column="0"
+                                IsVisible="{Binding Izquierda}"
+                                Style="{StaticResource EventCardStyle}"
+                                Padding="12,10" Margin="14,0,18,0">
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                    <Border Grid.Column="0" WidthRequest="52" HeightRequest="52"
+                                        StrokeShape="RoundRectangle 26" Padding="0"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource LightSurface}, Dark={StaticResource DarkSurface}}">
+                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" />
+                                    </Border>
+                                    <VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center">
+                                        <Label Text="{Binding Titulo}" FontFamily="OpenSansSemibold" FontSize="14" FontAttributes="Bold"
+                                            LineBreakMode="TailTruncation" MaxLines="2"
+                                            TextColor="{AppThemeBinding Light={StaticResource Navy}, Dark={StaticResource DarkText}}" />
+                                        <Label Text="{Binding Descripcion}" FontSize="11"
+                                            LineBreakMode="TailTruncation" MaxLines="3"
+                                            Style="{StaticResource TextoFuenteStyle}" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Border>
+
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <Border Style="{StaticResource BadgeAñoStyle}"
+                                    HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="{Binding Año}"
+                                        TextColor="White"
+                                        FontFamily="OpenSansSemibold" FontAttributes="Bold" FontSize="10.5"
+                                        LineBreakMode="NoWrap" HorizontalOptions="Center" />
+                                </Border>
+                            </Grid>
+
+                            <Border Grid.Row="0" Grid.Column="2"
+                                IsVisible="{Binding NoIzquierda}"
+                                Style="{StaticResource EventCardStyle}"
+                                Padding="12,10" Margin="18,0,14,0">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                    <VerticalStackLayout Grid.Column="0" Spacing="3" VerticalOptions="Center">
+                                        <Label Text="{Binding Titulo}" FontFamily="OpenSansSemibold" FontSize="14" FontAttributes="Bold"
+                                            LineBreakMode="TailTruncation" MaxLines="2"
+                                            TextColor="{AppThemeBinding Light={StaticResource Navy}, Dark={StaticResource DarkText}}" />
+                                        <Label Text="{Binding Descripcion}" FontSize="11"
+                                            LineBreakMode="TailTruncation" MaxLines="3"
+                                            Style="{StaticResource TextoFuenteStyle}" />
+                                    </VerticalStackLayout>
+                                    <Border Grid.Column="1" WidthRequest="52" HeightRequest="52"
+                                        StrokeShape="RoundRectangle 26" Padding="0"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource LightSurface}, Dark={StaticResource DarkSurface}}">
+                                        <Image Source="{Binding Imagen}" Aspect="AspectFill" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <Button Grid.Row="1" x:Name="btnRestaurarZoom" Text="Restablecer zoom"
+            Style="{StaticResource FabStyle}" FontSize="13" Padding="16,0"
+            HorizontalOptions="End" VerticalOptions="End" Margin="0,0,14,14"
+            IsVisible="False" Clicked="OnRestablecerZoom" />
+    </Grid>
+</ContentPage>

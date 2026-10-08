@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MapaInteractivo.Maui.Models"
+    xmlns:conv="clr-namespace:MapaInteractivo.Maui.Converters"
+    x:Class="MapaInteractivo.Maui.Views.CaciqueRowView"
+    x:DataType="models:Cacique">
+
+    <ContentView.Resources>
+        <conv:PastelColorConverter x:Key="Pastel" />
+    </ContentView.Resources>
+
+    <Border
+        BackgroundColor="White"
+        StrokeShape="RoundRectangle 16"
+        StrokeThickness="0"
+        Padding="12,10"
+        Margin="0,6"
+        HorizontalOptions="FillAndExpand">
+        <Border.Shadow>
+            <Shadow Brush="Black" Opacity="0.08" Radius="10" Offset="0,2" />
+        </Border.Shadow>
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTapped" />
+        </Border.GestureRecognizers>
+
+        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12" VerticalOptions="Center">
+
+            <!-- Avatar izquierdo con insignia pastel por año -->
+            <Border
+                x:Name="avatarBorder"
+                WidthRequest="60" HeightRequest="60"
+                StrokeShape="RoundRectangle 30"
+                BackgroundColor="{Binding Color, Converter={StaticResource Pastel}}"
+                Padding="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.12" Radius="6" Offset="0,2" />
+                </Border.Shadow>
+                <Label
+                    Text="{Binding Iniciales}"
+                    FontFamily="DisplayFont" FontSize="20"
+                    TextColor="{StaticResource Navy}"
+                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </Border>
+
+            <!-- Contenido derecho: badge año + título + descripción -->
+            <VerticalStackLayout Grid.Column="1" Spacing="2" VerticalOptions="Center">
+
+                <Label
+                    x:Name="badgeAno"
+                    Text="{Binding Periodo}"
+                    FontFamily="OpenSansSemibold" FontSize="10"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    Padding="6,2"
+                    BackgroundColor="{StaticResource Navy}"
+                    HorizontalOptions="Start"
+                    LineBreakMode="NoWrap">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Label
+                    Text="{Binding Nombre}"
+                    FontFamily="OpenSansSemibold" FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource Navy}"
+                    LineBreakMode="TailTruncation"
+                    MaxLines="1" />
+
+                <Label
+                    Text="{Binding Biografia}"
+                    FontSize="11"
+                    TextColor="{StaticResource Slate}"
+                    LineBreakMode="TailTruncation"
+                    MaxLines="2" />
+            </VerticalStackLayout>
+
+            <!-- Flecha navegación -->
+            <Label
+                Grid.Column="2"
+                Text="&#xE5CC;"
+                FontFamily="MaterialIcons" FontSize="22"
+                TextColor="{StaticResource Slate}"
+                VerticalOptions="Center"
+                HorizontalOptions="End" />
+        </Grid>
+    </Border>
+</ContentView>

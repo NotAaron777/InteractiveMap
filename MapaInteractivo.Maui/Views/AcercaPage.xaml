@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MapaInteractivo.Maui.Views.AcercaPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MapaInteractivo.Maui.Models"
+    xmlns:conv="clr-namespace:MapaInteractivo.Maui.Converters"
+    xmlns:views="clr-namespace:MapaInteractivo.Maui.Views"
+    Title="Acerca">
+
+    <ContentPage.Resources>
+        <conv:PastelColorConverter x:Key="Pastel" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Border Style="{StaticResource HeaderStyle}">
+            <VerticalStackLayout Spacing="2" Padding="0,2">
+                <Label
+                    Text="CACIQUES DE NICARAGUA · RESUMEN"
+                    Style="{StaticResource TituloPaginaStyle}"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center" />
+                <Label
+                    Text="Pueblos originarios y sus líderes"
+                    Style="{StaticResource SubtituloPaginaStyle}"
+                    HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Border>
+
+        <Border
+            Grid.Row="1"
+            Style="{StaticResource FloatingCardStyle}"
+            StrokeShape="RoundRectangle 24"
+            Padding="12,12,12,0"
+            Margin="12,4,12,12">
+
+            <CollectionView x:Name="gridCaciques" Margin="0,6,0,0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="8" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Cacique">
+                        <views:CaciqueRowView />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
+                    <VerticalStackLayout Padding="16,18,16,30" Spacing="14">
+
+                        <!-- Botones de acción inferiores -->
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                            <Button
+                                Grid.Column="0"
+                                Text="Línea de Tiempo Detallada"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                FontSize="13"
+                                Clicked="OnCronologia" />
+                            <Button
+                                Grid.Column="1"
+                                Text="Mapa Completo"
+                                Style="{StaticResource PrimaryButtonStyle}"
+                                FontSize="13"
+                                Clicked="OnMapa" />
+                        </Grid>
+
+                        <Label
+                            Text="TERRITORIOS COMPARTIDOS · MAPA 2016"
+                            Style="{StaticResource UppercaseLabelStyle}" />
+
+                        <Border Style="{StaticResource CardStyle}" Padding="14,8">
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    Text="Zonas de la Costa Caribe donde conviven varias comunidades: Miskito y Afrodescendientes, Miskito Mayangna, Miskito Mayangna Ulwas y Rama y Creole."
+                                    Style="{StaticResource TextoFuenteStyle}" />
+                                <Button
+                                    Text="Ver territorios compartidos"
+                                    Style="{StaticResource SecondaryButtonStyle}"
+                                    FontSize="13"
+                                    Clicked="OnTerritoriosCompartidos" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Label Text="REFERENCIAS" Style="{StaticResource UppercaseLabelStyle}" />
+
+                        <Border Style="{StaticResource CardStyle}">
+                            <VerticalStackLayout Spacing="10" BindableLayout.ItemsSource="{Binding Referencias}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate x:DataType="models:Seccion">
+                                        <Label Text="{Binding Texto}" Style="{StaticResource TextoFuenteStyle}" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Label
+                            Text="{Binding Creditos}"
+                            Style="{StaticResource TextoFuenteStyle}"
+                            FontSize="12"
+                            HorizontalTextAlignment="Center" />
+
+                    </VerticalStackLayout>
+                </CollectionView.Footer>
+            </CollectionView>
+
+        </Border>
+
+    </Grid>
+
+</ContentPage>
