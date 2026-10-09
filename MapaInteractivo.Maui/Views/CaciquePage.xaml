@@ -15,11 +15,20 @@
                     StrokeThickness="2" Stroke="{StaticResource Cyan}"
                     StrokeShape="RoundRectangle 32"
                     BackgroundColor="{AppThemeBinding Light={StaticResource LightSurface}, Dark={StaticResource DarkSurface}}">
-                    <Label
-                        x:Name="lblIniciales"
-                        FontAttributes="Bold" FontSize="22"
-                        TextColor="{StaticResource Primary}"
-                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    <!-- Avatar: imagen del cacique si existe; si no, iniciales (fallback) -->
+                    <Grid>
+                        <Label
+                            x:Name="lblIniciales"
+                            FontAttributes="Bold" FontSize="22"
+                            TextColor="{StaticResource Primary}"
+                            HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        <Image
+                            x:Name="imgCacique"
+                            Aspect="AspectFill"
+                            IsVisible="False"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill" />
+                    </Grid>
                 </Border>
                 <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="1">
                     <Label x:Name="lblNombre" Style="{StaticResource TituloPaginaStyle}" />

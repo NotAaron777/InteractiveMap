@@ -1,0 +1,9 @@
+<Project>
+	<PropertyGroup>
+		<!--
+			Versión de Microsoft.Maui.Controls usada por el csproj ($(MauiVersion)).
+			Última versión estable de la familia 10.x para el SDK .NET 10.0.4xx.
+		-->
+		<MauiVersion>10.0.110</MauiVersion>
+	</PropertyGroup>
+</Project>
