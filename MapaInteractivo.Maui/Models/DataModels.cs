@@ -68,6 +68,10 @@ public class TimelineEvent
 
     [JsonIgnore]
     public bool NoIzquierda => !Izquierda;
+
+    // Indica si el evento declara imagen; evita mostrar un círculo vacío cuando no hay recurso.
+    [JsonIgnore]
+    public bool TieneImagen => !string.IsNullOrWhiteSpace(Imagen);
 }
 
 public class FuentesInfo
