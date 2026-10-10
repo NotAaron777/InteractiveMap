@@ -47,6 +47,11 @@
 
 		<!-- Raw Assets (maps, masks and JSON - also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+
+		<!-- Mascaras del mapa historico (dibujadas en Krita en Resources\mascaras).
+		     Se empaquetan bajo "MascarasHistoricas" SIN mover ni modificar los originales,
+		     para no colisionar con las mascaras del mapa interactivo (Resources\Raw\Mascaras). -->
+		<MauiAsset Include="Resources\mascaras\*" LogicalName="MascarasHistoricas\%(Filename)%(Extension)" />
 	</ItemGroup>
 
 	<ItemGroup>
