@@ -38,10 +38,11 @@ public class TerritorioHistorico
 /// "MascarasHistoricas/"), que comparten dimensiones y alineación exactas con el mapa.
 ///
 /// Diferencias con el mapa interactivo:
-/// - Los territorios se muestran siempre con un tinte suave (paleta histórica),
-///   no solo al resaltarse.
+/// - El mapa inicia blanco: solo el territorio tocado en su pin se colorea
+///   con su máscara PNG y su color.
 /// - Cada territorio se etiqueta con su nombre en el centroide de su máscara.
-/// - No hay pines ni popup; la selección abre el panel de información de la página.
+/// - Al tocar un pin se colorea de inmediato su territorio (sin tarjeta
+///   emergente ni segunda pulsación); tocar otro pin cambia la selección.
 /// </summary>
 public class MapaHistoricoView : SKCanvasView
 {
@@ -49,15 +50,15 @@ public class MapaHistoricoView : SKCanvasView
     private const float ZoomMin = 1f;
     private const float ZoomMax = 4f;
 
-    // Tinte permanente para que los colores de los territorios sean claramente visibles
-    // sobre el mapa base blanco; el seleccionado se dibuja casi opaco y, mientras
-    // haya una selección, los demás se atenúan temporalmente (sin alterarlos de forma
-    // permanente). Antes eran 0.34/0.80 y los colores quedaban lavados (tonos beige).
-    private const float AlfaTerritorio = 0.50f;
-    private const float AlfaTerritorioAtenuado = 0.35f;
+    // El mapa inicia blanco: solo el territorio tocado se colorea, usando su
+    // máscara PNG y su color casi opaco.
     private const float AlfaTerritorioActivo = 0.88f;
 
     private const float EtiquetaFuenteBase = 12f;
+
+    // Mismo estilo y tamaño de pin que el mapa interactivo.
+    private const float PinRadio = 11f;
+    private const float PinRadioToque = 22f;
 
     private readonly List<TerritorioHistorico> _territorios = new();
     private SKBitmap? _mapa;
@@ -72,6 +73,19 @@ public class MapaHistoricoView : SKCanvasView
     private float _canvasW, _canvasH;
 
     private readonly HashSet<string> _resaltados = new();
+
+    // Pines de los territorios (mismo estilo que el mapa principal).
+    private readonly List<SKPoint> _pines = new();
+
+    // Desplazamiento visual solo de la posición del pin (no de la máscara ni de la
+    // etiqueta) para separar los dos pines que se superponen en el occidente:
+    // Chorotega y Maribio. Está en coordenadas del mapa, por lo que la separación
+    // se conserva al cambiar el zoom y al desplazar.
+    private static readonly Dictionary<string, SKPoint> AjustePin = new()
+    {
+        ["chorotega"] = new SKPoint(22f, 9f),
+        ["maribio"] = new SKPoint(-22f, -9f),
+    };
 
     private SKPoint _ultimoToque;
     private bool _panzando;
@@ -122,11 +136,17 @@ public class MapaHistoricoView : SKCanvasView
 
     private void CalcularCentroides()
     {
+        _pines.Clear();
         foreach (var territorio in _territorios)
         {
-            if (!_mascaras.TryGetValue(territorio.Id, out var alfas)) continue;
+            if (!_mascaras.TryGetValue(territorio.Id, out var alfas)) { _pines.Add(default); continue; }
 
             long sumaX = 0, sumaY = 0, total = 0;
+
+            // Límites del recuadro de la máscara: el pin se coloca en su centro,
+            // igual que el mapa interactivo.
+            var minX = _mapaW; var minY = _mapaH;
+            var maxX = -1; var maxY = -1;
 
             foreach (var alfa in alfas)
             {
@@ -139,6 +159,10 @@ public class MapaHistoricoView : SKCanvasView
                         sumaX += x;
                         sumaY += y;
                         total++;
+                        if (x < minX) minX = x;
+                        if (x > maxX) maxX = x;
+                        if (y < minY) minY = y;
+                        if (y > maxY) maxY = y;
                     }
                 }
             }
@@ -146,6 +170,15 @@ public class MapaHistoricoView : SKCanvasView
             territorio.Centroide = total > 0
                 ? new SKPoint(sumaX / (float)total, sumaY / (float)total)
                 : default;
+
+            var pin = maxX >= minX && maxY >= minY
+                ? new SKPoint((minX + maxX) / 2f, (minY + maxY) / 2f)
+                : default;
+
+            if (pin != default && AjustePin.TryGetValue(territorio.Id, out var ajuste))
+                pin = new SKPoint(pin.X + ajuste.X, pin.Y + ajuste.Y);
+
+            _pines.Add(pin);
         }
     }
 
@@ -238,6 +271,20 @@ public class MapaHistoricoView : SKCanvasView
     private void ResolverToque(SKPoint punto)
     {
         if (_mapa == null) return;
+
+        // Un toque en un pin colorea de inmediato únicamente su territorio,
+        // sin tarjeta "Ver zona" ni segunda pulsación.
+        for (var i = 0; i < _pines.Count; i++)
+        {
+            if (_pines[i] == default || !PosicionPinEnCanvas(i, out var pos)) continue;
+            if (!EstaEnPin(punto, pos)) continue;
+
+            _resaltados.Clear();
+            _resaltados.Add(_territorios[i].Id);
+            InvalidateSurface();
+            return;
+        }
+
         if (!TransformarAPuntoMapa(punto, out var mx, out var my)) return;
 
         if (mx < 0 || my < 0 || mx >= _mapaW || my >= _mapaH)
@@ -315,19 +362,16 @@ public class MapaHistoricoView : SKCanvasView
 
         DibujarTerritorios(canvas, destino);
         DibujarEtiquetas(canvas, destino);
+        DibujarPines(canvas);
     }
 
     private void DibujarTerritorios(SKCanvas canvas, SKRect destino)
     {
+        if (_resaltados.Count == 0) return;
+
         foreach (var territorio in _territorios)
         {
-            if (territorio.Bitmaps.Count == 0) continue;
-
-            var activo = _resaltados.Contains(territorio.Id);
-            float alfa;
-            if (activo) alfa = AlfaTerritorioActivo;
-            else if (_resaltados.Count > 0) alfa = AlfaTerritorioAtenuado;
-            else alfa = AlfaTerritorio;
+            if (!_resaltados.Contains(territorio.Id) || territorio.Bitmaps.Count == 0) continue;
 
             var r = territorio.Color.Red / 255f;
             var g = territorio.Color.Green / 255f;
@@ -341,7 +385,7 @@ public class MapaHistoricoView : SKCanvasView
                     0f, 0, 0, 0, r,
                     0, 0, 0, 0, g,
                     0, 0, 0, 0, b,
-                    0, 0, 0, alfa, 0
+                    0, 0, 0, AlfaTerritorioActivo, 0
                 })
             };
 
@@ -381,4 +425,59 @@ public class MapaHistoricoView : SKCanvasView
             canvas.DrawText(territorio.Nombre, px, py, SKTextAlign.Center, fuente, relleno);
         }
     }
+
+    private void DibujarPines(SKCanvas canvas)
+    {
+        for (var i = 0; i < _pines.Count; i++)
+        {
+            if (_pines[i] == default) continue;
+            if (!PosicionPinEnCanvas(i, out var pos)) continue;
+            DibujarPin(canvas, pos);
+        }
+    }
+
+    private static void DibujarPin(SKCanvas canvas, SKPoint pos)
+    {
+        using var cuerpo = new SKPaint
+        {
+            IsAntialias = true,
+            Shader = SKShader.CreateLinearGradient(
+                new SKPoint(0, pos.Y - PinRadio),
+                new SKPoint(0, pos.Y + PinRadio),
+                new[] { SKColor.Parse("#FF2A85"), SKColor.Parse("#E91E63"), SKColor.Parse("#9D4EDD") },
+                new[] { 0f, 0.5f, 1f },
+                SKShaderTileMode.Clamp)
+        };
+        using var halo = new SKPaint
+        {
+            IsAntialias = true,
+            Style = SKPaintStyle.Stroke,
+            StrokeWidth = 3.5f,
+            Color = SKColor.Parse("#00F2FE").WithAlpha(140)
+        };
+        using var brillo = new SKPaint { IsAntialias = true, Color = SKColors.White.WithAlpha(240) };
+
+        canvas.DrawCircle(new SKPoint(pos.X, pos.Y - PinRadio * 0.45f), PinRadio + 2.5f, halo);
+        canvas.DrawCircle(new SKPoint(pos.X, pos.Y - PinRadio * 0.55f), PinRadio, cuerpo);
+        canvas.DrawCircle(new SKPoint(pos.X, pos.Y + PinRadio * 0.65f), PinRadio * 0.42f, cuerpo);
+        canvas.DrawCircle(new SKPoint(pos.X, pos.Y - PinRadio * 0.55f), PinRadio * 0.28f, brillo);
+    }
+
+    private bool PosicionPinEnCanvas(int i, out SKPoint p)
+    {
+        p = default;
+        if (_mapa == null || i < 0 || i >= _pines.Count) return false;
+
+        var escalaBase = Math.Min(_canvasW / (float)_mapaW, _canvasH / (float)_mapaH);
+        var dibujadoW = _mapaW * escalaBase * _escala;
+        var dibujadoH = _mapaH * escalaBase * _escala;
+        var origenX = _canvasW / 2f - dibujadoW * _centroX;
+        var origenY = _canvasH / 2f - dibujadoH * _centroY;
+        var pt = _pines[i];
+        p = new SKPoint(origenX + pt.X * dibujadoW / _mapaW, origenY + pt.Y * dibujadoH / _mapaH);
+        return true;
+    }
+
+    private static bool EstaEnPin(SKPoint punto, SKPoint pin) =>
+        Math.Abs(punto.X - pin.X) <= PinRadioToque && Math.Abs(punto.Y - pin.Y) <= PinRadioToque;
 }
