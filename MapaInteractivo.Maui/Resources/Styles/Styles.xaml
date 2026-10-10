@@ -103,9 +103,9 @@
     <Style x:Key="BadgeAñoStyle" TargetType="Border">
         <Setter Property="BackgroundColor" Value="{StaticResource Navy}" />
         <Setter Property="Stroke" Value="{StaticResource Purple}" />
-        <Setter Property="StrokeThickness" Value="2" />
-        <Setter Property="StrokeShape" Value="RoundRectangle 14" />
-        <Setter Property="Padding" Value="12,5" />
+        <Setter Property="StrokeThickness" Value="1.5" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 12" />
+        <Setter Property="Padding" Value="9,4" />
     </Style>
 
     <!-- Botones -->
