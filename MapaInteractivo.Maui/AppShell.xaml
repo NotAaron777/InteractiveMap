@@ -18,6 +18,11 @@
             Icon="{FontImageSource FontFamily=MaterialIcons, Glyph=&#xE55B;}"
             ContentTemplate="{DataTemplate views:MapaPage}" />
         <ShellContent
+            Title="Histórico"
+            Route="historico"
+            Icon="{FontImageSource FontFamily=MaterialIcons, Glyph=&#xE88B;}"
+            ContentTemplate="{DataTemplate views:MapaHistoricoPage}" />
+        <ShellContent
             Title="Cronología"
             Route="cronologia"
             Icon="{FontImageSource FontFamily=MaterialIcons, Glyph=&#xE8B5;}"

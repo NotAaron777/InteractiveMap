@@ -23,6 +23,7 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<JsonDataService>();
 		builder.Services.AddTransient<MapaPage>();
+		builder.Services.AddTransient<MapaHistoricoPage>();
 		builder.Services.AddTransient<CronologiaPage>();
 		builder.Services.AddTransient<AcercaPage>();
 		builder.Services.AddTransient<ConfigPage>();
